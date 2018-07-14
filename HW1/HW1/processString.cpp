@@ -1,9 +1,9 @@
 ﻿#include <iostream>
 #include <string>
 #include <vector>
-
+#include <string.h> 
 #include <gtest\gtest.h>
-
+#include <ctype.h>
 using namespace std;
 
 
@@ -16,11 +16,76 @@ using namespace std;
 //       -1 if exception occur (ex. string containing non-digit character)
 int getAscendingStr(string& inputStr)
 {
-	
-	/// Please fill your code here
-
-
+	int i = 0,count=0;
+	string num = inputStr;
+	const int size= num.length();
+	char cstr[18];
+	strcpy_s(cstr, inputStr.c_str());
+	//for (int i = 0; i<18; i++)
+		//cout << cstr[i];
+	int ri[5];
+	for (i = 0; cstr[i] != 0; i++) {
+		if (isalpha(cstr[i]))
+			return -1;	
+	}
+	int str2int(const char *str);
+	int* bubbleSort(int a[], int len);
+	char *point;
+	char delimsp[] = " ";
+	char *strToken = nullptr;
+	char *next_token = nullptr;
+	point = strtok_s(cstr,delimsp,&next_token);
+	while (point != NULL) {
+		int x = str2int(point);
+		ri[count] = x;
+		point = strtok_s(nullptr, delimsp, &next_token);
+		count += 1;
+	}
+	int *b = bubbleSort(ri, 5);
+	string fin;
+	for (i = 0; i<5; i++) {
+		fin = fin + to_string(b[i]);
+		if (i != 4)
+			fin = fin + " ";
+		
+	}
+	cout << fin << endl;
+	inputStr = fin;
 	return 0;
+	/// Please fill your code here
+}
+int str2int(const char *str) {
+	   int temp = 0;
+	     const char *ptr = str;  
+	     if (*str == '-' || *str == '+') {
+		     str++;                      	
+	}
+	     while (*str != 0) {
+		         if ((*str < '0') || (*str > '9')) {
+			             break;                       		
+		}
+		         temp = temp * 10 + (*str - '0'); 
+		         str++;      
+	}
+	     if (*ptr == '-') {                  
+		         temp = -temp;
+		
+	}
+	     return temp;
+}
+
+int* bubbleSort(int a[], int len)
+{
+	int i, j, temp;
+	for (i = 0; i < len - 1; i++)
+		for (j = 0; j < len - 1 - i; j++) {
+			if (a[j] > a[j + 1]) {
+				temp = a[j];
+				a[j] = a[j + 1];
+				a[j + 1] = temp;
+			}
+		}
+	return a;
 }
 
 // solveQ Function requirement
@@ -36,7 +101,24 @@ int getAscendingStr(string& inputStr)
 //          (return vector size should be 0)
 int solveQ(vector<double> &x, double a, double b, double c)
 {
-
+	if (pow(b, 2) - 4 * a * c > 0) {
+		cout << ((-1) * b + sqrt(pow(b, 2) - 4 * a * c)) / 2 / a << " " << (-b - sqrt(pow(b, 2) - 4 * a * c)) / 2 / a << endl;
+		double a1 = ((-1) * b + sqrt(pow(b, 2) - 4 * a * c)) / 2 / a;
+		double a2 = (-b - sqrt(pow(b, 2) - 4 * a * c)) / 2 / a;
+		x.push_back(a1);
+		x.push_back(a2);
+		return 1;
+	}
+	else if (pow(b, 2) - 4 * a * c == 0) {
+		cout << (-1) * b / 2 / a << endl;
+		double a1 = (-1) * b / 2 / a;
+		x.push_back(a1);
+		return 0;
+	}
+	else {
+	cout << "無解\n";
+	return -1;
+}
 	return 0;
 }
 

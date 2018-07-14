@@ -1,0 +1,13 @@
+﻿已經開始建置於 2018/7/14 下午 02:34:31。
+     1>節點 2 (Build 目標) 上的專案 "C:\Users\chann\Desktop\windows-programming-channingyang\HW1\HW1\HW1.vcxproj"。
+     1>ClCompile:
+         D:\Stdio visual\VC\bin\CL.exe /c /I"C:\Users\chann\Desktop\windows-programming-channingyang\HW1\\..\googletest-master\googletest\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt processString.cpp
+         processString.cpp
+       Link:
+         D:\Stdio visual\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\chann\Desktop\windows-programming-channingyang\HW1\Debug\HW1.exe" /INCREMENTAL /NOLOGO /LIBPATH:"..\..\googletest-master\googletest\msvc\gtest\Debug" gtest_maind.lib gtestd.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG:FASTLINK /PDB:"C:\Users\chann\Desktop\windows-programming-channingyang\HW1\Debug\HW1.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\chann\Desktop\windows-programming-channingyang\HW1\Debug\HW1.lib" /MACHINE:X86 Debug\processString.obj
+         HW1.vcxproj -> C:\Users\chann\Desktop\windows-programming-channingyang\HW1\Debug\HW1.exe
+     1>專案 "C:\Users\chann\Desktop\windows-programming-channingyang\HW1\HW1\HW1.vcxproj" (Build 目標) 建置完成。
+
+建置成功。
+
+經過時間 00:00:01.85
